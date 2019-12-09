@@ -7,13 +7,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Pages from './pages';
 
-// previous variable declarations
-
-ReactDOM.render(
-    <ApolloProvider client={client}>
-        <Pages />
-    </ApolloProvider>, document.getElementById('root')
-);
 
 const cache = new InMemoryCache();
 const link = new HttpLink({
@@ -39,3 +32,11 @@ client
     `
     })
     .then(result => console.log(result));
+
+
+
+ReactDOM.render(
+    <ApolloProvider client={client}>
+        <Pages />
+    </ApolloProvider>, document.getElementById('root')
+);
